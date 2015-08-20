@@ -45,7 +45,7 @@ RUN apt-get install -y \
 # We uses .htaccess
 RUN a2enmod rewrite
 
-# Composer depends on Phalcon version
+# Composer install depends on Phalcon version
 RUN docker-php-ext-install \
         pcntl \
         zip \
