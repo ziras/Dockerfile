@@ -52,3 +52,7 @@ RUN docker-php-ext-install \
         && \
     curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN composer global require --dev 'phalcon/devtools:1.3.x-dev' && \
+	ln -s ~/.composer/vendor/bin/phalcon.php /usr/bin/phalcon && \
+	chmod ugo+x /usr/bin/phalcon
