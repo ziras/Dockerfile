@@ -45,10 +45,14 @@ RUN apt-get install -y \
 # We uses .htaccess
 RUN a2enmod rewrite
 
-# Composer depends on Phalcon version
+# Composer install depends on Phalcon version
 RUN docker-php-ext-install \
         pcntl \
         zip \
         && \
     curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN composer global require --dev 'phalcon/devtools:1.3.x-dev' && \
+	ln -s ~/.composer/vendor/bin/phalcon.php /usr/bin/phalcon && \
+	chmod ugo+x /usr/bin/phalcon
