@@ -56,3 +56,5 @@ RUN docker-php-ext-install \
 RUN composer global require --dev 'phalcon/devtools:1.3.x-dev' && \
 	ln -s ~/.composer/vendor/bin/phalcon.php /usr/bin/phalcon && \
 	chmod ugo+x /usr/bin/phalcon
+
+RUN apt-get install -y time
