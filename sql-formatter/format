@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+$success = chdir(__DIR__);
+assert('$success');
+
+require __DIR__ . '/libraries/sql-parser/autoload.php';
+
+if (empty($argv[1])) {
+    echo "format <query>", PHP_EOL;
+    exit(1);
+}
+
+unset($argv[0]);
+
+$query = implode(' ', $argv);
+
+echo SqlParser\Utils\Formatter::format($query), PHP_EOL;
