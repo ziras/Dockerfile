@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:2.7-slim-stretch
 
 WORKDIR /
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
