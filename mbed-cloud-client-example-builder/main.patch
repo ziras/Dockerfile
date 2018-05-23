@@ -1,0 +1,11 @@
+--- /Users/foliolin/tmp/mbed-cloud-client-example/main.cpp	2018-05-15 14:57:32.000000000 +0800
++++ main.cpp	2018-05-23 11:50:26.000000000 +0800
+@@ -165,7 +165,7 @@
+     while (mbedClient.is_register_called()) {
+         static int button_count = 0;
+         mcc_platform_do_wait(100);
+-        if (mcc_platform_button_clicked()) {
++        if (1 || mcc_platform_button_clicked()) {
+             button_res->set_value(++button_count);
+         }
+     }
