@@ -1,4 +1,4 @@
-FROM foliolin/mbed-cloud-client-example-builder
+FROM foliolin/mbed-cloud-client-example-builder:latest
 COPY ./mbed_cloud_dev_credentials.c /mbed-cloud-client-example/mbed_cloud_dev_credentials.c
 RUN python pal-platform/pal-platform.py fullbuild --target x86_x64_NativeLinux_mbedtls --toolchain GCC --external ./../define.txt --name mbedCloudClientExample.elf
 
